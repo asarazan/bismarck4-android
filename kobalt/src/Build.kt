@@ -11,7 +11,7 @@ val p = kotlinProject {
     name = "bismarck4-android"
     group = "com.levelmoney"
     artifactId = name
-    version = "0.1"
+    version = "0.1.01"
 
     sourceDirectories {
         path("src/main/java")
@@ -26,18 +26,22 @@ val p = kotlinProject {
     }
 
     dependencies {
-//        compile("com.beust:jcommander:1.48")
         compile("com.levelmoney:bismarck4:0.1")
         provided("com.google.android:android:4.1.1.4")
     }
 
     dependenciesTest {
-//        compile("org.testng:testng:6.9.5")
+        compile("junit:junit:4.12")
+        compile("org.jetbrains.kotlin:kotlin-test:1.0.0-beta-4584")
 
     }
 
     assemble {
         mavenJars {
         }
+    }
+
+    jcenter {
+        publish = true
     }
 }
