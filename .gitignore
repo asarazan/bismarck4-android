@@ -1,0 +1,10 @@
+*.iml
+kobaltBuild
+javaBuild
+.kobalt
+.idea
+out
+gen
+.DS_Store
+output
+local.properties
