@@ -26,7 +26,7 @@ val p = kotlinProject {
     }
 
     dependencies {
-        compile("com.levelmoney:bismarck4:0.1")
+        compile("com.levelmoney:bismarck4:0.2")
         provided("com.google.android:android:4.1.1.4")
     }
 
