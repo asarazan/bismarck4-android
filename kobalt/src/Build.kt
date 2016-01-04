@@ -11,7 +11,7 @@ val p = kotlinProject {
     name = "bismarck4-android"
     group = "com.levelmoney"
     artifactId = name
-    version = "0.2"
+    version = "0.2.01"
 
     sourceDirectories {
         path("src/main/java")
@@ -26,7 +26,7 @@ val p = kotlinProject {
     }
 
     dependencies {
-        compile("com.levelmoney:bismarck4:0.2")
+        compile("com.levelmoney:bismarck4:0.2.01")
         provided("com.google.android:android:4.1.1.4")
     }
 
