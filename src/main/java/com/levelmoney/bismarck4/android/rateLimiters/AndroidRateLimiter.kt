@@ -6,12 +6,13 @@ import android.content.SharedPreferences.Editor
 import android.preference.PreferenceManager
 
 import com.levelmoney.bismarck4.RateLimiter
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by Aaron Sarazan on 11/25/13
  * Copyright(c) 2013 Level, Inc.
  */
-public class AndroidRateLimiter(val c: Context, val interval: Long, val key: String) : RateLimiter {
+public class AndroidRateLimiter(val c: Context, val ms: Long, val key: String) : RateLimiter {
 
     /**
      * Uses [System.nanoTime]
@@ -43,7 +44,8 @@ public class AndroidRateLimiter(val c: Context, val interval: Long, val key: Str
 
     private fun pass(current: Long = System.nanoTime()): Boolean {
         val last = getLastRun()
-        return last == 0L || current - last >= interval
+        val ns = TimeUnit.MILLISECONDS.toNanos(ms)
+        return last == 0L || current - last >= ns
     }
 
     public fun getLastRun(): Long {
