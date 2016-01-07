@@ -11,7 +11,7 @@ val p = kotlinProject {
     name = "bismarck4-android"
     group = "com.levelmoney"
     artifactId = name
-    version = "0.2.11"
+    version = "0.2.12"
 
     sourceDirectories {
         path("src/main/java")
@@ -42,5 +42,6 @@ val p = kotlinProject {
 
     jcenter {
         publish = true
+        sign = true
     }
 }
